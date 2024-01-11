@@ -1,6 +1,7 @@
 package com.example.demo;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
@@ -12,5 +13,13 @@ public class User {
 
     private String login;
     private String password;
-    private LocalDateTime date;
+    private Date date;
+    private String email;
+    public String getUser(){
+        return "User:\n" +
+                "login=" + login + "\n" +
+                "password=" + password + "\n" +
+                "date=" + date + "\n" +
+                "email=" + email + "\n";
+    }
 }

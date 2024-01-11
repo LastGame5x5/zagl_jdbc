@@ -16,17 +16,17 @@ import java.time.LocalDateTime;
 @RequestMapping("/api")
 public class MyController {
 
-    @PostMapping("/user")
-    public ResponseEntity<?> createUserTime (@RequestBody User user) {
-            if (user.getLogin() == null || user.getPassword() == null)
-                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error user's login or password");
-            else
-            user.setDate(LocalDateTime.now());
-            return ResponseEntity.ok(user);
-        }
-    @GetMapping("/user")
-    public ResponseEntity<?> getUserTime(@RequestParam String login, @RequestParam String password){
-        User user = new User(login, password, LocalDateTime.now());
-        return ResponseEntity.ok(user);
+//    @PostMapping("/user")
+//    public ResponseEntity<?> createUserTime (@RequestBody User user) {
+//            if (user.getLogin() == null || user.getPassword() == null)
+//                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error user's login or password");
+//            else
+//            user.setDate(LocalDateTime.now());
+//            return ResponseEntity.ok(user);
+//        }
+    @GetMapping("/users/select/{login}")
+    public ResponseEntity<?> getSelect(@RequestParam String login){
+        User user1 = DbFunctions.getUserByLogin("user4");;
+        return ResponseEntity.ok(user1);
     }
 }
