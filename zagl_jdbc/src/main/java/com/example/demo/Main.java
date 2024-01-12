@@ -18,7 +18,6 @@ public class Main {
 //		User user2 = new User("test","test", java.sql.Date.valueOf("2024-10-10"),"bell@integrator.com");
 //		int rowsUpdated = DbFunctions.insertUser(user2);
 //		System.out.println(rowsUpdated + " row(s) updated");
-//	}
+	}
 
 	}
-}

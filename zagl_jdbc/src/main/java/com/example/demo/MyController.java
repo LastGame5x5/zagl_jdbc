@@ -25,8 +25,8 @@ public class MyController {
 //            return ResponseEntity.ok(user);
 //        }
     @GetMapping("/users/select/{login}")
-    public ResponseEntity<?> getSelect(@RequestParam String login){
-        User user1 = DbFunctions.getUserByLogin("user4");;
+    public ResponseEntity<?> getSelect(@PathVariable String login){
+        User user1 = DbFunctions.getUserByLogin(login);;
         return ResponseEntity.ok(user1);
     }
 }
